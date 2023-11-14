@@ -1,0 +1,142 @@
+#taller
+
+
+#Taller 1
+#Objetivo:
+#- Hacer uso de las estructuras de programacion en Python
+#- Poner en práctica los conceptos aprendidos en sesiones de clase.
+#Herramientas:
+#- VsCode o cualquier editor de código.
+#- Python
+#- Git - GitHub
+#1) 🤔 Preguntas Teóricas:
+#A) Explica con tus palabras para que se usan los siguientes terminos en
+#python:
+#● print:
+
+#imprime el mensaje especificado en la pantalla u otro dispositivo de salida estándar
+
+#● if:
+
+#_si la condición es verdadera, imprime la expresión con sangría. ____________________________________________________
+
+#● for:
+
+#_se utiliza para iterar sobre una objeto iterable y ejecutar un bloque de código para cada elemento en la secuencia de dicho objeto
+
+#While
+
+#evalúa una condición y luego ejecuta un bloque de código si la condición es verdadera
+
+
+
+#2) 🎯 Ejercicios Prácticos:
+#A continuación, vamos a hacer algunos ejercicios similares para poner
+#en práctica lo que vimos en clase.
+#- Crea un programa en Python donde podamos Calcular promedios
+#de la siguientes lista de numeros:
+#[ 1,2,3,4,4,5,6,7,8,4,3,2,4,4,4,5,6,7,2]
+
+
+numeros = [1, 2, 3, 4, 4, 5, 6, 7, 8, 4, 3, 2, 4, 4, 4, 5, 6, 7, 2]
+
+promedio = sum(numeros) / len(numeros)
+
+print("El promedio de la lista de números es:" ,promedio)
+
+
+
+
+#- Crea un programa en Python donde podamos calcular el IMC de
+#un adulto:
+#- Peso: 80
+#- Altura: 150
+
+peso = int(input("Ingrese el su peso: "))
+altura = float(input("Ingrese  su altura: "))
+
+imc = peso/altura**2
+
+print (f"Su IMC es {imc}")
+
+
+
+
+#- Crea un programa en Python donde podamos almacenar
+#informacion del usuarios List(diccionario).
+#- nombre
+#- apellido
+#- edad
+#- peso
+#- altura
+#- Presentar las siguientes opciones:
+#- Opcion 1) Agregar más usuarios
+#- Opcion 2) Listar usuario
+#- Opcion 3) Calcular el promedio de [edades, peso, alturas]
+#- Opcion 4) Calcular el IMC de cada usuario
+#- Opcion 0) Salir
+#Ayuda:
+#bandera = 4
+
+usuarios=[]
+bandera = True
+
+
+while (bandera):        
+  print("1) Agregar más usuarios")
+  print("2) Listar usuarios")
+  print("3) Calcular el promedio de edades, peso y altura")
+  print("4) Calcular el IMC de cada usuario")
+  print("0) Salir")
+  escoger = input("Seleccione una opción: ")
+  
+  if escoger == "1":
+    nombre = input("Ingrese el nombre del usuario: ")
+    apellido = input("Ingrese el apellido del usuario: ")
+    edad = int  (input("Ingrese la edad del usuario: "))
+    peso = float  (input("Ingrese el peso del usuario: "))
+    altura = float  (input("Ingrese la altura del usuario: "))
+    usuario = {'nombre':nombre, 'apellido':apellido, 'edad':edad, 'peso':peso, 'altura':altura}
+    usuarios.append(usuario)
+    print("Usuario agregado correctamente.")
+
+  elif escoger == "2":
+    for usuario in usuarios:
+        print(f"Nombre: {usuario['nombre']}")
+        print(f"Apellido: {usuario['apellido']}")
+        print(f"Edad: {usuario['edad']}")
+        print(f"Peso: {usuario['peso']}")
+        print(f"Altura: {usuario['altura']}")
+  elif escoger == "3":
+    Edad = [usuario["edad"] for usuario in usuarios]
+    Peso = [usuario["peso"] for usuario in usuarios]
+    Altura = [usuario["altura"] for usuario in usuarios]
+
+    promedad = sum(Edad) / len(Edad)
+    prompeso = sum(Peso) / len(Peso)
+    promaltura = sum(Altura) / len(Altura)
+
+    print("Promedio de edades:", promedad)
+    print("Promedio de peso:", prompeso)
+    print("Promedio de altura:", promaltura)
+
+  elif escoger == "4":
+    for i, usuario in enumerate(usuarios, 1):
+        imc = usuario['peso'] / usuario['altura']**2
+        print (f"Su IMC es {imc}")
+
+  elif escoger == "5":
+    bandera=False
+
+
+
+
+#Reto:
+#Publicar el proyecto en GitHub en tu repositorio en una carpeta de
+#entregas:
+#1) Sincroniza el repositorio principal
+#2) Crea carpeta con tu nombre
+#3) Crea carpeta con el nombre semana 1
+#4) Sube el archivo con tu respuesta
+#5) crear el pull request
+
